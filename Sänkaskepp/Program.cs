@@ -21,6 +21,7 @@ namespace Sänkaskepp
                         break;
                     } else {
                         Console.WriteLine("The answer has to be between 1-10");
+                        Console.ReadLine();
                     }
                 }
 
@@ -32,10 +33,13 @@ namespace Sänkaskepp
                         if (guess == answer)
                         {
                             Console.WriteLine("Hit!");
+                            Console.ReadLine();
                             break;
                         }
-                        else if (guess < answer+2 && guess > answer-2){
+                        else if (guess < answer+3 && guess > answer-3){
                             Console.WriteLine("Near miss!");
+                        } else {
+                            Console.WriteLine("Miss!");
                         }
                         
                     }
@@ -46,10 +50,10 @@ namespace Sänkaskepp
                     Console.WriteLine("Do you want to continue? \n" + "Answer with either yes or no.");
                     string input = Console.ReadLine();
                     if (input == "yes") {
-                        exit = true;
+                        exit = false;
                         break;
                     } else if (input == "no") {
-                        exit = false;
+                        exit = true;
                         break;
                     } else {
                         Console.WriteLine("You need to answer with either yes or no.");
